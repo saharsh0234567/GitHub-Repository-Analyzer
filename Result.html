@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+<div class="result-box">
+
+<h1>Analysis Result</h1>
+
+<p>Username: {{ username }}</p>
+<p>Total Repositories: {{ total_repos }}</p>
+
+<p><b>Top Language:</b> {{ top_language }}</p>
+<p><b>Skill Level:</b> {{ skill_level }}</p>
+
+<h2>Languages Used:</h2>
+
+<ul>
+    {% for lang, count in languages.items() %}
+        <li>{{ lang }} : {{ count }}</li>
+    {% endfor %}
+</ul>
+
+<a href="/">Go Back</a>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
